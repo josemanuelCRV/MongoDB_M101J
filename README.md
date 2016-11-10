@@ -147,13 +147,59 @@ Quiz: *`Java Driver: Representing Documents:`*
 -   [x] new Document("_id", "user1").append("interests", Arrays.asList("basketball", "drumming"));
 
 
+Quiz: *`Java Driver: Insert`*  
+    *Do you expect the second insert below to succeed?* 
+    
+    ````
+    MongoClient client = new MongoClient();
+    MongoDatabase database = client.getDatabase("school");
+    MongoCollection<Document> people = database.getCollection("people");
+
+    Document doc = new Document("name", "Andrew Erlichson").append("company", "10gen");
+
+    people.insertOne(doc);      // first insert
+    doc.remove("_id");             // remove the _id key
+    people.insertOne(doc);      // second insert
+ 
+    ````
+
+-   [ ] No, because the _id will be a duplicate in the collection.
+-   [ ] No because the remove call will remove the entire document.
+-   [x] Yes, because the remove call will remove the _id field added by the driver in the first insert.
+-   [ ] Yes, because the driver always adds a unique _id field on insert.
+
+
+Quiz: *`Java Driver: Find, FindOne, and Count`*  
+    *In the following code snippet:* 
+
+    ````
+    MongoClient client = new MongoClient();
+    MongoDatabase database = client.getDatabase("school");
+    MongoCollection<Document> people = database.getCollection("people");
+    Document doc;
+    // xxxx
+    System.out.println(doc);
+ 
+    ```` 
+    *Please enter the simplest one line of Java code that would be needed in place of // xxxx to make it print one document from the people collection.*     
+    
+    ````
+    doc=people.find().first();
+    ````
+
+
+
+
+
+
+
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
    
    [qw1]: <https://github.com/josemanuelCRV/MongoDB_M101J/blob/master/README.md#week-1---introduction>
    [hw1]: <https://university.mongodb.com/>
    
-   [qw2]: <https://github.com/josemanuelCRV/MongoDB_M101J/blob/master/README.md#week-2---CRUD>
+   [qw2]: <https://github.com/josemanuelCRV/MongoDB_M101J/blob/master/README.md#week-2---crud>
    [hw2]: <https://university.mongodb.com/>
    
    [qw3]: <https://university.mongodb.com/>
