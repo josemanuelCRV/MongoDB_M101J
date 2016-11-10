@@ -44,7 +44,7 @@ Final Project In this project we put together everything we've covered through t
     
 #### Quizzes
 
-**Week 1 - Introduction:**  
+#### Week 1 - Introduction:  
 
 Quiz: *`welcome to M101J:`*  
     *What counts toward your final grade in the class?* 
