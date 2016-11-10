@@ -28,7 +28,7 @@ Learn everything you need to know to get started building a MongoDB-based app. T
     - *[Quizzes][qw5]* 
     - *[Homeworks][hw5]*
 
- - **Week 6 - Application Engineering:** Drivers, Impact Of Replication And Sharding On Design And Development..
+- **Week 6 - Application Engineering:** Drivers, Impact Of Replication And Sharding On Design And Development..
     - *[Quizzes][qw6]* 
     - *[Homeworks][hw6]*
 
