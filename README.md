@@ -130,7 +130,21 @@ Quiz: *`Introduction to Schema Design:`*
 
 ----
 
+#### Week 2 - CRUD:  
 
+Quiz: *`Java Driver: Representing Documents:`*  
+    *How would you create a document using the Java driver with this JSON structure:* 
+
+````
+{
+   "_id" : "user1",
+   "interests" : [ "basketball", "drumming"]
+}
+````
+-   [ ] new HashMap().put("_id", "user1").put(Arrays.asList("basketball", "drumming"));
+-   [ ] new Document("_id", "user1").append("interests", "basketball", "drumming");
+-   [ ] new DBObject("_id", "user1").append("interests", Arrays.asList("basketball", "drumming"));
+-   [x] new Document("_id", "user1").append("interests", Arrays.asList("basketball", "drumming"));
 
 
 
@@ -139,7 +153,7 @@ Quiz: *`Introduction to Schema Design:`*
    [qw1]: <https://github.com/josemanuelCRV/MongoDB_M101J/blob/master/README.md#week-1---introduction>
    [hw1]: <https://university.mongodb.com/>
    
-   [qw2]: <https://university.mongodb.com/>
+   [qw2]: <https://github.com/josemanuelCRV/MongoDB_M101J/blob/master/README.md#week-2---CRUD>
    [hw2]: <https://university.mongodb.com/>
    
    [qw3]: <https://university.mongodb.com/>
