@@ -46,14 +46,14 @@ Final Project In this project we put together everything we've covered through t
 
 #### Week 1 - Introduction:  
 
-Quiz: *`welcome to M101J:`*  
+**Quiz:** *`welcome to M101J:`*  
     *What counts toward your final grade in the class?* 
 -   [ ] Quizzes
 -   [x] Homeworks
 -   [x] Final Exam
 -   [ ] Class Participation
 
-Quiz: *`JSON:`*  
+**Quiz:** *`JSON:`*  
 *Which of the following value types are defined by the JSON spec?*
 
 -   [x] object
@@ -63,13 +63,13 @@ Quiz: *`JSON:`*
 -   [ ] integer
 -   [x] number
 
-Quiz: *`BSON:`*  
+**Quiz:** *`BSON:`*  
 *True or false? BSON plays the role of a canonical (i.e., "unique") representation of documents shared across all drivers and tools.*
 
 -   [x] True
 -   [ ] False
 
-Quiz: *`Blog in Relational Tables:`*  
+**Quiz:** *`Blog in Relational Tables:`*  
 *let's assume that our blog can be modeled with the following relational tables:*
 
     authors:
@@ -110,7 +110,7 @@ In order to display a blog post with its comments and tags, how many tables will
 -   [ ] 5
 -   [x] 6
 
-Quiz: *`Blog in Documents:`*  
+**Quiz:** *`Blog in Documents:`*  
 *Given the document schema that we proposed for the blog, how many collections would we need to access to display the blog home page?*
 -   [ ] 0
 -   [x] 1
@@ -118,7 +118,7 @@ Quiz: *`Blog in Documents:`*
 -   [ ] 4
 
 
-Quiz: *`Introduction to Schema Design:`*  
+**Quiz:** *`Introduction to Schema Design:`*  
 *In which scenario is it impossible to embed data within a document (you must put the data in a separate collection)?*
 -   [ ] The data would be duplicated across multiple objects within a collection.
 -   [ ] You need an index on the data element.
@@ -132,7 +132,7 @@ Quiz: *`Introduction to Schema Design:`*
 
 #### Week 2 - CRUD:  
 
-Quiz: *`Java Driver: Representing Documents:`*  
+**Quiz:** *`Java Driver: Representing Documents:`*  
     *How would you create a document using the Java driver with this JSON structure:* 
 
 ````
@@ -147,7 +147,7 @@ Quiz: *`Java Driver: Representing Documents:`*
 -   [x] new Document("_id", "user1").append("interests", Arrays.asList("basketball", "drumming"));
 
 
-Quiz: *`Java Driver: Insert`*  
+**Quiz:** *`Java Driver: Insert`*  
     *Do you expect the second insert below to succeed?* 
     
 ````
@@ -158,7 +158,7 @@ MongoCollection<Document> people = database.getCollection("people");
 Document doc = new Document("name", "Andrew Erlichson").append("company", "10gen");
 
 people.insertOne(doc);      // first insert
-doc.remove("_id");             // remove the _id key
+doc.remove("_id");          // remove the _id key
 people.insertOne(doc);      // second insert 
 ````
 
@@ -168,7 +168,7 @@ people.insertOne(doc);      // second insert
 -   [ ] Yes, because the driver always adds a unique _id field on insert.
 
 
-Quiz: *`Java Driver: Find, FindOne, and Count`*  
+**Quiz:** *`Java Driver: Find, FindOne, and Count`*  
     *In the following code snippet:* 
 
 ````    
@@ -185,7 +185,7 @@ System.out.println(doc);
 doc=people.find().first();  
 ````
 
-Quiz: *`Java Driver: Querying with a filter`*  
+**Quiz:** *`Java Driver: Querying with a filter`*  
     *Given a collection named "scores" of documents with two fields -- type and score -- what is the correct line of code to find all documents where type is "quiz" and score is greater than 20 and less than 90. Select all that apply.* 
 
 -   [ ] scores.find(new Document("score", new Document("$gt", 20).append("$lt", 90))
@@ -194,7 +194,7 @@ Quiz: *`Java Driver: Querying with a filter`*
 -   [x] scores.find(Filters.and(Filters.eq("type", "quiz"), Filters.gt("score", 20), Filters.lt("score", 90)))
 
 
-Quiz: *`Java Driver: Querying with a Projection`*  
+**Quiz:** *`Java Driver: Querying with a Projection`*  
     *Given a variable named "students" of type MongoCollection<Document>, which of the following lines of code could be used to find all documents in the collection, retrieving only the "phoneNumber" field.* 
 
 -   [ ] students.find(new Document("phoneNumber", 1).append("_id", 0))
@@ -203,7 +203,7 @@ Quiz: *`Java Driver: Querying with a Projection`*
 -   [x] students.find().projection(new Document("phoneNumber", 1).append("_id", 0))
 
 
-Quiz: *`Java Driver: Querying with Sort, Skip and Limit`*  
+**Quiz:** *`Java Driver: Querying with Sort, Skip and Limit`*  
     *Supposed you had the following documents in a collection named things.* 
 ````
 { "_id" : 0, "value" : 10 }
@@ -226,7 +226,7 @@ Quiz: *`Java Driver: Querying with Sort, Skip and Limit`*
 
 
 
-Quiz: *`Java Driver: Update and Replace`*  
+**Quiz:** *`Java Driver: Update and Replace`*  
     *In the following code fragment, what is the Java expression in place of xxxx that will set the field "examiner" to the value "Jones" for the document with _id of 1. Please use the $set operator.
     
 ````
@@ -238,7 +238,7 @@ scores.updateOne(new Document("_id", 1), xxxx);
 new Document("$set", new Document("examiner", "Jones"))
 ````
 
-Quiz: *`Java Driver: Delete`*  
+**Quiz:** *`Java Driver: Delete`*  
     *Given a collection with the following documents, how many will be affected by the following deletion statement?*
     
 ````
