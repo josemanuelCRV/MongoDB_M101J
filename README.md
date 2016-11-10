@@ -211,12 +211,13 @@ Quiz: *`Java Driver: Querying with Sort, Skip and Limit`*
 { "_id" : 2, "value" : 7 }
 { "_id" : 3, "value" : 20 }
 ````
-    *If you performed the following query in the Java driver:*
 
-````
-collection.find().sort(new Document("value", -1)).skip(2).limit(1)
-````
-    *which document would be returned?* 
+*If you performed the following query in the Java driver:*
+
+
+    collection.find().sort(new Document("value", -1)).skip(2).limit(1) 
+    
+*which document would be returned?* 
 
 -   [ ] The document with _id=0
 -   [x] The document with _id=1
