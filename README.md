@@ -6,7 +6,7 @@
 Learn everything you need to know to get started building a MongoDB-based app. This course will go over basic installation, JSON, schema design, querying, insertion of data, indexing and working with the Java driver. In the course, you will build a blogging platform, backed by MongoDB. 
 
 ---------
-#### Units 
+### Units 
 
 - **Week 1 - Introduction:**  Overview, Design Goals, the Mongo Shell, JSON Intro, Installing Tools, Overview of Blog Project. Maven, Spark and Freemarker Intro.
     - *[Quizzes][qw1]* 
@@ -42,7 +42,7 @@ Final Project In this project we put together everything we've covered through t
 
 ----
     
-#### Quizzes
+### Quizzes
 
 #### Week 1 - Introduction:  
 
