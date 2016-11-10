@@ -220,9 +220,9 @@ doc=people.find().first();
 *which document would be returned?* 
 
 -   [ ] The document with _id=0
--   [x] The document with _id=1
--   [ ] The document with _id=2
--   [x] The document with _id=3
+-   [ ] The document with _id=1
+-   [x] The document with _id=2
+-   [ ] The document with _id=3
 
 
 
