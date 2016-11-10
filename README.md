@@ -172,20 +172,21 @@ Quiz: *`Java Driver: Insert`*
 Quiz: *`Java Driver: Find, FindOne, and Count`*  
     *In the following code snippet:* 
 
-    ````
-    MongoClient client = new MongoClient();
-    MongoDatabase database = client.getDatabase("school");
-    MongoCollection<Document> people = database.getCollection("people");
-    Document doc;
-    // xxxx
-    System.out.println(doc);
- 
-    ```` 
-    *Please enter the simplest one line of Java code that would be needed in place of // xxxx to make it print one document from the people collection.*     
+````    
+MongoClient client = new MongoClient();
+MongoDatabase database = client.getDatabase("school");
+MongoCollection<Document> people = database.getCollection("people");
+Document doc;
+// xxxx
+System.out.println(doc);
+````
+
+*Please enter the simplest one line of Java code that would be needed in place of // xxxx to make it print one document from the people collection.*     
     
-    ````
-    doc=people.find().first();
-    ````
+    doc=people.find().first();  
+    
+
+
 
 
 
