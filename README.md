@@ -150,18 +150,17 @@ Quiz: *`Java Driver: Representing Documents:`*
 Quiz: *`Java Driver: Insert`*  
     *Do you expect the second insert below to succeed?* 
     
-    ````
-    MongoClient client = new MongoClient();
-    MongoDatabase database = client.getDatabase("school");
-    MongoCollection<Document> people = database.getCollection("people");
+````
+MongoClient client = new MongoClient();
+MongoDatabase database = client.getDatabase("school");
+MongoCollection<Document> people = database.getCollection("people");
 
-    Document doc = new Document("name", "Andrew Erlichson").append("company", "10gen");
+Document doc = new Document("name", "Andrew Erlichson").append("company", "10gen");
 
-    people.insertOne(doc);      // first insert
-    doc.remove("_id");             // remove the _id key
-    people.insertOne(doc);      // second insert
- 
-    ````
+people.insertOne(doc);      // first insert
+doc.remove("_id");             // remove the _id key
+people.insertOne(doc);      // second insert 
+````
 
 -   [ ] No, because the _id will be a duplicate in the collection.
 -   [ ] No because the remove call will remove the entire document.
@@ -182,13 +181,81 @@ System.out.println(doc);
 ````
 
 *Please enter the simplest one line of Java code that would be needed in place of // xxxx to make it print one document from the people collection.*     
+````
+doc=people.find().first();  
+````
+
+Quiz: *`Java Driver: Querying with a filter`*  
+    *Given a collection named "scores" of documents with two fields -- type and score -- what is the correct line of code to find all documents where type is "quiz" and score is greater than 20 and less than 90. Select all that apply.* 
+
+-   [ ] scores.find(new Document("score", new Document("$gt", 20).append("$lt", 90))
+-   [x] scores.find(new Document("type", "quiz").append("score", new Document("$gt", 20).append("$lt", 90)))
+-   [ ] scores.find(new Document("type", "quiz").append("$gt", new Document("score", 20)).append("$lt", new Document("score", 90)))
+-   [x] scores.find(Filters.and(Filters.eq("type", "quiz"), Filters.gt("score", 20), Filters.lt("score", 90)))
+
+
+Quiz: *`Java Driver: Querying with a Projection`*  
+    *Given a variable named "students" of type MongoCollection<Document>, which of the following lines of code could be used to find all documents in the collection, retrieving only the "phoneNumber" field.* 
+
+-   [ ] students.find(new Document("phoneNumber", 1).append("_id", 0))
+-   [x] students.find().projection(Projections.fields(Projections.include("phoneNumber"), Projections.excludeId())
+-   [ ] students.find(new Document("phoneNumber", 1))
+-   [x] students.find().projection(new Document("phoneNumber", 1).append("_id", 0))
+
+
+Quiz: *`Java Driver: Querying with Sort, Skip and Limit`*  
+    *Supposed you had the following documents in a collection named things.* 
+````
+{ "_id" : 0, "value" : 10 }
+{ "_id" : 1, "value" : 5 }
+{ "_id" : 2, "value" : 7 }
+{ "_id" : 3, "value" : 20 }
+````
+    *If you performed the following query in the Java driver:*
+
+````
+collection.find().sort(new Document("value", -1)).skip(2).limit(1)
+````
+    *which document would be returned?* 
+
+-   [ ] The document with _id=0
+-   [x] The document with _id=1
+-   [ ] The document with _id=2
+-   [x] The document with _id=3
+
+
+
+Quiz: *`Java Driver: Update and Replace`*  
+    *In the following code fragment, what is the Java expression in place of xxxx that will set the field "examiner" to the value "Jones" for the document with _id of 1. Please use the $set operator.
     
-    doc=people.find().first();  
+````
+# update using $set
+scores.updateOne(new Document("_id", 1), xxxx);
+````
+
+````
+new Document("$set", new Document("examiner", "Jones"))
+````
+
+Quiz: *`Java Driver: Delete`*  
+    *Given a collection with the following documents, how many will be affected by the following deletion statement?*
     
+````
+{ _id: 0, x: 1 }
+{ _id: 1, x: 1 }
+{ _id: 2, x: 1 }
+{ _id: 3, x: 2 }
+{ _id: 4, x: 2 }
+````
 
+````
+collection.deleteOne(Filters.eq("x", 1))
+````
 
-
-
+-   [ ] 0
+-   [x] 1
+-   [ ] 2
+-   [ ] 3
 
 
 
