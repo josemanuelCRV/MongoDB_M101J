@@ -136,7 +136,7 @@ Quiz: *`Introduction to Schema Design:`*
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
    
-   [qw1]: (https://github.com/josemanuelCRV/MongoDB_M101J/blob/master/README.md#week-1---introduction)
+   [qw1]: [https://github.com/josemanuelCRV/MongoDB_M101J/blob/master/README.md#week-1---introduction/]
    [hw1]: <https://university.mongodb.com/>
    
    [qw2]: <https://university.mongodb.com/>
