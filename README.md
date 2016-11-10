@@ -9,7 +9,7 @@ Learn everything you need to know to get started building a MongoDB-based app. T
 #### Units 
 
 - **Week 1 - Introduction:**  Overview, Design Goals, the Mongo Shell, JSON Intro, Installing Tools, Overview of Blog Project. Maven, Spark and Freemarker Intro.
-    - *[Quizzes][qw1]* 
+    - *[Quizzes][#week-1---introduction/]* 
     - *[Homeworks][hw1]*   
 
 - **Week 2 - CRUD:** Mongo Shell, Query Operators, Update Operators and a Few Commands.
